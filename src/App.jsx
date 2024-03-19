@@ -15,7 +15,7 @@ function App() {
 
   function handleSignUpOrLogin(){
     // we call this function after userService.login(), or userService.signup()
-    // in order to get the token sent back from express and store the decoded token in the state
+    // in order to get the token sent back from express and store the decoded token in the state.
     setUser(userService.getUser())
   }
   return (
