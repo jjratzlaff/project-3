@@ -123,9 +123,9 @@ export default function FeedPage({loggedUser, handleLogout}) {
 
   
   useEffect(() => {
-    // This useEffect is called when the page loads
+   
 
-    // Don't forget to call the function
+
     getPosts();
   }, []);
   return (

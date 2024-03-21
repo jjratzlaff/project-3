@@ -10,6 +10,8 @@ require("./config/database");
 
 const app = express();
 
+
+const likesRouter = require('./routes/api/likes')
 const userRouter = require("./routes/api/users")
 const postRouter = require('./routes/api/posts')
 // add in when the app is ready to be deployed
@@ -28,6 +30,7 @@ app.use(require("./config/auth"));
 // api routes must be before the "catch all" route
 app.use("/api/users", userRouter);
 app.use('/api/posts', postRouter);
+app.use('/api', likesRouter);
 
 // "catch all" route
 app.get('/*', function(req, res) {
