@@ -25,7 +25,7 @@ export default function LoginPage({ handleSignUpOrLogin }) {
 
   const [error, setError] = useState("");
 
-  // this function takes a path defined in App.js for our routes
+
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
@@ -54,8 +54,8 @@ export default function LoginPage({ handleSignUpOrLogin }) {
   return (
     <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="purple" textAlign="center">
-          <Image src="https://i.imgur.com/TM4eA5g.jpg" /> Login
+        <Header as="h3" color="black" textAlign="center">
+           Existing User Login
         </Header>
         <Form autoComplete="off" onSubmit={handleSubmit}>
           <Segment stacked>
@@ -81,7 +81,7 @@ export default function LoginPage({ handleSignUpOrLogin }) {
             </Button>
           </Segment>
           <Message>
-            New to Us? <Link to="/signup">Sign up</Link>
+            New?   <Link to="/signup">  Sign up</Link>
           </Message>
           {error ? <ErrorMessage error={error} /> : null}
         </Form>

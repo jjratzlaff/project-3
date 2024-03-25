@@ -10,7 +10,6 @@ import {
 	Segment,
   } from "semantic-ui-react";
 
-// this hook allows us to navigate programatically
 import { useNavigate } from 'react-router-dom'
 import userService from "../../utils/userService";
 
@@ -28,7 +27,7 @@ export default function SignUpPage({handleSignUpOrLogin}) {
 
   const [photo, setPhoto] = useState({})
 
-  // initialize the navigate hook from react-router-dom
+
   const navigate = useNavigate()
 
   function handleChange(e) {
@@ -41,40 +40,26 @@ export default function SignUpPage({handleSignUpOrLogin}) {
   async function handleSubmit(e){
     e.preventDefault();
 
-    // ===========================================
-    // When we send a photo to the express server server
-    // from the client (react) code, we have send a certain type 
-    // of request. 
-    // Multipart/formData request 
 
-    // 1. Change the format of our data into formData objects (Only when sending a photo, otherwise data should be json)
     const formData = new FormData();
     formData.append('photo', photo)
 
-    // =========================================
+  
     formData.append('username', state.username)
     formData.append('email', state.email)
     formData.append('password', state.password)
     formData.append('bio', state.bio)
-    // the for loop below is doing what each line above is doing
-    // for (let fieldName in state){
-    //   formData.append(fieldName, state[fieldName])
-    // }
-
-    // ==========================================
-
+ 
 
 
     try {
-    // 2. Remove the headers on the fetch request (the browser) (in utils/signup)
-    // will automatically apply the correct multipart/formdata header
-      await userService.signup(formData); // userService is imported at top of file
-      handleSignUpOrLogin();// this is destructred in the props
-      // and it grabs the token from localstorage and sets the 
-      // new user in state!
+   
+      await userService.signup(formData); 
+      handleSignUpOrLogin();
+     
 
-      // Change the view to the home page!
-      navigate('/');// navigate acceps a path defined by a route!
+      
+      navigate('/');
 
     } catch(err){
       console.log(err.message, " <- this comes from tht throw in utils/signup")
@@ -83,8 +68,6 @@ export default function SignUpPage({handleSignUpOrLogin}) {
 
 
 
-
-     // ===========================================
   }
 
   function handleFileInput(e){
@@ -96,8 +79,8 @@ export default function SignUpPage({handleSignUpOrLogin}) {
   return (
     <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="purple" textAlign="center">
-          <Image src="https://i.imgur.com/TM4eA5g.jpg" /> Sign Up
+        <Header as="h3" color="black" textAlign="center">
+          Sign Up
         </Header>
         <Form autoComplete="off" onSubmit={handleSubmit}>
           <Segment stacked>
@@ -133,10 +116,10 @@ export default function SignUpPage({handleSignUpOrLogin}) {
               required
             />
             <Form.TextArea
-              label="bio"
+              label="Tell us about yourself"
               name="bio"
               value={state.bio}
-              placeholder="Tell us more about your dogs..."
+              placeholder="Bio"
               onChange={handleChange}
             />
             <Form.Field>

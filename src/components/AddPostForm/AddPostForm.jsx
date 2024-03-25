@@ -36,7 +36,7 @@ export default function AddPostForm({handleAddPost}){
             className="form-control"
             name="caption"
             value={state.caption}
-            placeholder="What's on your pups mind?"
+            placeholder="Write a Caption"
             onChange={handleChange}
             required
           />
@@ -48,7 +48,7 @@ export default function AddPostForm({handleAddPost}){
             onChange={handleFileInput}
           />
           <Button type="submit" className="btn">
-            ADD PUPPY
+            SUBMIT POST
           </Button>
         </Form>
       </Segment>

@@ -6,7 +6,6 @@ const favicon = require("serve-favicon");
 
 require("./config/database");
 
-// Require controllers here
 
 const app = express();
 
@@ -15,12 +14,10 @@ app.set('view engine', 'ejs')
 const likesRouter = require('./routes/api/likes')
 const userRouter = require("./routes/api/users")
 const postRouter = require('./routes/api/posts')
-// add in when the app is ready to be deployed
-// app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
+
 app.use(logger("dev"));
 
-// THis line is how servers process
-// json
+
 app.use(express.json());
 
 
@@ -49,11 +46,6 @@ if(process.env.IS_PRODUCTION){
   app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, './','index.html'));
   });
-
-
-
-
-
 
 const { PORT = 8000 } = process.env;
 app.listen(PORT, () => {

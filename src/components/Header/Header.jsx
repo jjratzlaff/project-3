@@ -5,12 +5,12 @@ export default function PageHeader({ loggedUser, handleLogout }) {
     console.log(handleLogout)
   return (
     <Segment clearing>
-      <Header as="h2" floated="right">
+      <Header as="h3" floated="right">
         <Link to="/">
           <Icon name="home"></Icon>
         </Link>
         <Link to="" onClick={handleLogout}>
-          Logout
+          Log out
         </Link>
       </Header>
       <Header as="h2" floated="left">
@@ -28,3 +28,4 @@ export default function PageHeader({ loggedUser, handleLogout }) {
     </Segment>
   );
 }
+
