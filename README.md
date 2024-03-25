@@ -16,6 +16,9 @@ other user's content.
 - Express
 - React
 - Node
+- Semantic UI
+
+  
 <img width="617" alt="Screen Shot 2024-03-25 at 11 59 13 AM" src="https://github.com/jjratzlaff/project-3/assets/156650294/86742c7b-5c5f-47da-bdab-7fde9695dcb9">
 
 <img width="763" alt="Screen Shot 2024-03-25 at 11 50 38 AM" src="https://github.com/jjratzlaff/project-3/assets/156650294/ad48a0d2-716b-49c9-bee2-98f5e4061217">
